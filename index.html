@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Estate Consultant</title>
+    <meta
+      name="description"
+      content="Real-Estate Consultant helps clients discover premium buildings, apartments, and lands for sale or rent."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="index.html">Real-Estate Consultant</a>
+        <div class="nav-links">
+          <a href="#listings">Listings</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </nav>
+
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Trusted real estate guidance</p>
+          <h1>Find premium homes, apartments, and lands with confidence.</h1>
+          <p class="hero-copy">
+            RealtorRafat manages a curated portfolio of homes for sale and rent across prime locations.
+            Every listing is presented with clear details, pricing, and neighborhood insights.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-3d" href="#listings">Explore Listings</a>
+            <a class="btn btn-secondary btn-3d" href="contact.html">Talk to RealtorRafat</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Agent Spotlight</h3>
+          <p><strong>Name:</strong> RealtorRafat</p>
+          <p><strong>Email:</strong> Jafarraufatdestiny@gmail.com</p>
+          <p><strong>Location:</strong> Abuja neighborhoods & growth areas</p>
+          <p><strong>Service:</strong> Sales, rentals, and property guidance</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container section" id="listings">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Available properties</p>
+            <h2>Discover listings that match your goals</h2>
+          </div>
+            <p>Browse rentals and sales with clear descriptions, pricing, and location details.</p>
+        </div>
+          <div class="search-row">
+            <input id="search-input" type="search" placeholder="Search by title, location, type, or description" />
+            <div class="search-range">
+              <input id="price-min" type="number" placeholder="Min price" />
+              <input id="price-max" type="number" placeholder="Max price" />
+            </div>
+            <button id="clear-search" class="btn btn-secondary">Clear</button>
+          </div>
+          <div id="property-list" class="property-grid"></div>
+          <div id="pagination-controls" class="pagination-controls"></div>
+      </section>
+
+
+    </main>
+
+    <script src="script.js"></script>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  </body>
+</html>

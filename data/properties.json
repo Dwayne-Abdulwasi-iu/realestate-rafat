@@ -1,0 +1,32 @@
+[
+  {
+    "id": "f4d0d9c2-7d1f-4101-85c8-f0d4b2b5299f",
+    "title": "3 acres",
+    "type": "Land",
+    "status": "For Sale",
+    "description": "close to the ocean",
+    "location": "lagos",
+    "price": 16000000,
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "size": 19000,
+    "contact": "9112752160",
+    "media": [
+      {
+        "name": "4aa7cb673d771deb8712f79580fd5dfe.mp4",
+        "type": "video",
+        "url": "/uploads/1783354842254-796464004-4aa7cb673d771deb8712f79580fd5dfe.mp4"
+      },
+      {
+        "name": "3d0ef620f28ece8aee43f0ed38ba3949.mp4",
+        "type": "video",
+        "url": "/uploads/1783354842356-945464202-3d0ef620f28ece8aee43f0ed38ba3949.mp4"
+      },
+      {
+        "name": "04ff184e4dbda8bb23b3e1e1b6f1782a.mp4",
+        "type": "video",
+        "url": "/uploads/1783354842401-496038112-04ff184e4dbda8bb23b3e1e1b6f1782a.mp4"
+      }
+    ]
+  }
+]

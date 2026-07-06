@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Estate Consultant Admin</title>
+    <meta
+      name="description"
+      content="Admin portal for RealtorRafat to manage property listings, images, and videos."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="index.html">Real-Estate Consultant</a>
+        <div class="nav-links">
+          <a href="index.html#listings">Listings</a>
+          <a href="index.html#reviews">Reviews</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </nav>
+
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Admin portal</p>
+          <h1>Manage listings and media in one place.</h1>
+          <p class="hero-copy">
+            This admin page is built for RealtorRafat to upload images, videos, edit listings, and remove assets safely.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h3>Admin access</h3>
+          <p><strong>Email:</strong> realestate@gmail.com</p>
+          <p><strong>Password:</strong> realestate</p>
+          <p><strong>Agent:</strong> RealtorRafat</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Administrator</p>
+            <h2>Admin dashboard</h2>
+          </div>
+          <p>Sign in to manage the listings, upload images or videos, and delete media directly from the listing view.</p>
+        </div>
+
+        <div id="admin-login-card" class="card">
+          <h3>Admin Login</h3>
+          <form id="admin-login-form" class="stack-form">
+            <input type="email" id="admin-email" placeholder="Admin email" required />
+            <input type="password" id="admin-password" placeholder="Admin password" required />
+            <button class="btn btn-primary" type="submit">Sign In</button>
+          </form>
+        </div>
+
+        <div id="admin-dashboard" class="hidden">
+          <div class="dashboard-toolbar">
+            <h3>Dashboard</h3>
+            <button id="logout-btn" class="btn btn-secondary">Log Out</button>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="card">
+              <h3 id="form-title">Add a new property</h3>
+              <form id="property-form" class="stack-form">
+                <input type="hidden" id="property-id" />
+                <input type="text" id="property-title" placeholder="Property title" required />
+                <div class="inline-fields">
+                  <select id="property-type" required>
+                    <option value="">Select property type</option>
+                    <option value="Building">Building</option>
+                    <option value="Land">Land</option>
+                    <option value="Apartment">Apartment</option>
+                  </select>
+                  <select id="property-status" required>
+                    <option value="">Select status</option>
+                    <option value="For Sale">For Sale</option>
+                    <option value="For Rent">For Rent</option>
+                  </select>
+                </div>
+                <textarea id="property-description" placeholder="Description" required></textarea>
+                <input type="text" id="property-location" placeholder="Location" required />
+                <input type="number" id="property-price" placeholder="Price" min="0" required />
+                <div class="inline-fields">
+                  <input type="number" id="property-bedrooms" placeholder="Bedrooms" min="0" />
+                  <input type="number" id="property-bathrooms" placeholder="Bathrooms" min="0" />
+                  <input type="number" id="property-size" placeholder="Size (sq ft)" min="0" />
+                </div>
+                <input type="text" id="property-contact" placeholder="Contact info" required />
+                <label for="property-media">Upload images or videos</label>
+                <div class="upload-row">
+                  <input type="file" id="property-media" accept="image/*,video/*" multiple class="file-input" />
+                  <button type="button" id="add-media-btn" class="btn btn-primary upload-btn">Add files</button>
+                </div>
+                <div class="media-panel">
+                  <div class="media-panel-header">
+                    <button type="button" id="toggle-media-panel" class="btn btn-secondary">Show media</button>
+                    <button type="button" id="show-all-media" class="btn btn-secondary">Show all</button>
+                  </div>
+                  <div id="media-preview" class="media-preview collapsed" aria-hidden="true"></div>
+                </div>
+                <button class="btn btn-primary" type="submit">Save Property</button>
+              </form>
+            </section>
+
+            <section class="card">
+              <h3>Manage listings</h3>
+              <div id="admin-properties" class="admin-list"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="admin.js"></script>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  </body>
+</html>

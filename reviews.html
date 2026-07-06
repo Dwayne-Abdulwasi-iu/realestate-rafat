@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Estate Consultant Reviews</title>
+    <meta
+      name="description"
+      content="Read and submit client reviews for RealtorRafat."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a class="brand" href="index.html">Real-Estate Consultant</a>
+        <div class="nav-links">
+          <a href="index.html#listings">Listings</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </nav>
+
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Client reviews</p>
+          <h1>Hear from people who worked with RealtorRafat</h1>
+          <p class="hero-copy">
+            Submit your experience and read honest feedback from clients who found their ideal property.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h3>Review page</h3>
+          <p>Share your thoughts on service, clarity, and the buying or renting experience.</p>
+          <p>Reviews help future clients make better decisions.</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container section reviews-section" id="reviews">
+        <div class="review-grid">
+          <div class="card">
+            <p class="eyebrow">Customer feedback</p>
+            <h2>What clients say about RealtorRafat</h2>
+            <p>Visitors can share their experiences, recommendations, and notes after viewing a property.</p>
+            <form id="review-form" class="stack-form">
+              <input type="text" id="review-name" placeholder="Your name" required />
+              <input type="email" id="review-email" placeholder="Your email" required />
+              <select id="review-rating" required>
+                <option value="5">5 stars</option>
+                <option value="4">4 stars</option>
+                <option value="3">3 stars</option>
+                <option value="2">2 stars</option>
+                <option value="1">1 star</option>
+              </select>
+              <textarea id="review-comment" placeholder="Write your review" required></textarea>
+              <button class="btn btn-primary" type="submit">Submit Review</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3>Recent reviews</h3>
+            <div id="review-list" class="review-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  </body>
+</html>
