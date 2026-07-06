@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
 const session = require('express-session');
+const { default: MongoStore } = require('connect-mongo');
 const { MongoClient } = require('mongodb');
 const { v4: uuidv4 } = require('uuid');
 
@@ -156,7 +157,17 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(session({ secret: 'real-estate-secret', resave: false, saveUninitialized: true }));
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'real-estate-secret',
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: MONGO_URI,
+    dbName: MONGO_DB,
+    collectionName: 'sessions',
+    ttl: 14 * 24 * 60 * 60
+  })
+}));
 
 app.use((req, res, next) => {
   const allowedOrigins = ['http://127.0.0.1:8000', 'http://localhost:8000', 'http://127.0.0.1:3000', 'http://localhost:3000'];
