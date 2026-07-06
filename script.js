@@ -1,6 +1,4 @@
-const DEFAULT_API_BASE = 'http://127.0.0.1:3000';
-// If the page is already served from the API server (port 3000), use that origin.
-const API_BASE = (window.location && window.location.origin && window.location.origin.includes('3000')) ? window.location.origin : DEFAULT_API_BASE;
+const API_BASE = window.location.origin || '';
 
 let propertiesCache = []; // current page results
 let searchTimeout = null;

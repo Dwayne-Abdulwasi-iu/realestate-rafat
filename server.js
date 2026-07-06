@@ -170,9 +170,16 @@ app.use(session({
 }));
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://127.0.0.1:8000', 'http://localhost:8000', 'http://127.0.0.1:3000', 'http://localhost:3000'];
+  const allowedOrigins = [
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+    'http://127.0.0.1:3000',
+    'http://localhost:3000',
+    'https://realestate-rafat.onrender.com',
+    'https://www.realestate-rafat.onrender.com'
+  ];
   const origin = req.get('Origin');
-  if (allowedOrigins.includes(origin)) {
+  if (origin && allowedOrigins.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

@@ -1,7 +1,6 @@
 const ADMIN_EMAIL = 'realestate@gmail.com';
 const ADMIN_PASSWORD = 'realestate';
-const DEFAULT_API_BASE = 'http://127.0.0.1:3000';
-const API_BASE = window.location.origin && window.location.origin.includes('3000') ? window.location.origin : DEFAULT_API_BASE;
+const API_BASE = window.location.origin || '';
 
 let propertiesCache = [];
 let selectedPropertyId = '';
